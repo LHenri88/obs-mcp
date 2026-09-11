@@ -1,0 +1,33 @@
+[project]
+name = "obs-mcp"
+version = "0.1.0"
+description = "MCP server for controlling local OBS Studio via obs-websocket: recording, scenes, sources"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "Henri8", email = "lh882220@gmail.com" },
+]
+keywords = ["mcp", "obs", "obs-studio", "screen-recording", "claude", "llm-agent"]
+classifiers = [
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Video",
+]
+dependencies = [
+    "mcp>=2.0.0",
+    "obsws-python>=1.7.2",
+]
+
+[project.urls]
+Repository = "https://github.com/LHenri88/obs-mcp"
+
+[project.scripts]
+obs-mcp = "obs_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/obs_mcp"]
